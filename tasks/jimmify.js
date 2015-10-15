@@ -41,12 +41,18 @@ module.exports = function(grunt) {
     this.files.forEach(function(f) {
       f.src.forEach(function(filepath) {
           var filecontent = grunt.file.read(filepath);
-          var destFile = path.join(f.dest[0], path.basename(filepath));
+          var destDir = f.dest;
+          
+          if (destDir.constructor === Array) {
+              destDir = destDir[0];
+          }
+
+          var destFile = path.join(destDir, path.basename(filepath));
           
           request({
             url: options.protocol + '://' + options.server + ':' + options.port,
             method: 'POST',
-            timeout: 1000 * 60 * 5,
+            timeout: 1000 * 60 * 60 * 24,
             headers: {
                 "Content-Type": "text/plain"
             },
