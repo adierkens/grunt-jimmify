@@ -25,6 +25,7 @@ module.exports = function(grunt) {
         protocol: 'http',
         server: 'localhost',
         port: 3000,
+        email: 'adam@dierkens.com'
     });
 
     var requestCount = 0;

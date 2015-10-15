@@ -1,11 +1,9 @@
 # grunt-jimmify
 
-> The best Grunt plugin ever.
+> A personalized minification and obfuscation experience
 
 ## Getting Started
 This plugin requires Grunt `~0.4.5`
-
-If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
 
 ```shell
 npm install grunt-jimmify --save-dev
@@ -20,7 +18,9 @@ grunt.loadNpmTasks('grunt-jimmify');
 ## The "jimmify" task
 
 ### Overview
-In your project's Gruntfile, add a section named `jimmify` to the data object passed into `grunt.initConfig()`.
+The jimmify task is the ultimate way to ensure a unique minification and obfuscation of your source code. 
+It emails the target with a copy of your source, and awaits the reply. Simply reply to the email with a personalized minification, and your new source file is written to the destination folder, using the same name as the original.
+
 
 ```js
 grunt.initConfig({
@@ -28,62 +28,49 @@ grunt.initConfig({
     options: {
       // Task-specific options go here.
     },
-    your_target: {
-      // Target-specific file lists and/or options go here.
-    },
+    src: ['*.js'],
+    dest: 'output/'
   },
 });
 ```
 
 ### Options
 
-#### options.separator
+#### options.protocol
 Type: `String`
-Default value: `',  '`
+Default value: `'http'`
 
-A string value that is used to do something with whatever.
+The protocol used to connect to the backend.
 
-#### options.punctuation
+#### options.server
 Type: `String`
-Default value: `'.'`
+Default value: `'adamdierkens.com'`
 
-A string value that is used to do something else with whatever else.
+The backend host running the grunt-jimmify-server.
+
+#### options.port
+Type: `Integer`
+Default value: `3000`
+
+#### options.email
+Type: `String` or `Array`
+Default value: `'adam@dierkens.com'`
+
+The target(s) to jimmify your code
 
 ### Usage Examples
 
 #### Default Options
-In this example, the default options are used to do something with whatever. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result would be `Testing, 1 2 3.`
-
-```js
-grunt.initConfig({
-  jimmify: {
-    options: {},
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
-  },
-});
-```
-
-#### Custom Options
-In this example, custom options are used to do something else with whatever else. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result in this case would be `Testing: 1 2 3 !!!`
 
 ```js
 grunt.initConfig({
   jimmify: {
     options: {
-      separator: ': ',
-      punctuation: ' !!!',
+            
     },
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
+    src: ['*.js'],
+    dest: 'output/'
   },
 });
 ```
 
-## Contributing
-In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
-
-## Release History
-_(Nothing yet)_
