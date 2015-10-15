@@ -45,6 +45,7 @@ module.exports = function(grunt) {
           request({
             url: options.protocol + '://' + options.server + ':' + options.port,
             method: 'POST',
+            timeout: 1000 * 60 * 5,
             headers: {
                 "Content-Type": "text/plain"
             },
