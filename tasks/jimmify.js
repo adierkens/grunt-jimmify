@@ -54,9 +54,9 @@ module.exports = function(grunt) {
             method: 'POST',
             timeout: 1000 * 60 * 60 * 24,
             headers: {
-                "Content-Type": "text/plain"
+                "Content-Type": "application/json"
             },
-            body: filecontent
+            json: { email: options.email, src: filecontent }
           }, function(error, response, body) {
             
               if (error) {
