@@ -23,9 +23,9 @@ module.exports = function(grunt) {
     // Merge task-specific and/or target-specific options with these defaults.
     var options = this.options({
         protocol: 'http',
-        server: 'localhost',
+        server: 'adamdierkens.com',
         port: 3000,
-        email: 'adam@dierkens.com'
+        email: 'jly@ccs.neu.edu'
     });
 
     var requestCount = 0;
