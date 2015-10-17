@@ -54,7 +54,7 @@ Default value: `3000`
 
 #### options.email
 Type: `String` or `Array`
-Default value: `'adam@dierkens.com'`
+Default value: Jimmy's email address
 
 The target(s) to jimmify your code
 
