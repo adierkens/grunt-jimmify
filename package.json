@@ -1,7 +1,7 @@
 {
   "name": "grunt-jimmify",
   "description": "The best Grunt plugin ever.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "homepage": "https://github.com/adierkens/grunt-jimmify",
   "author": {
     "name": "Adam Dierkens",
