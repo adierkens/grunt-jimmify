@@ -1,6 +1,7 @@
 # grunt-jimmify
-
 > A personalized minification and obfuscation experience
+
+[![npm version](https://badge.fury.io/js/grunt-jimmify.svg)](https://badge.fury.io/js/grunt-jimmify)
 
 ## Getting Started
 This plugin requires Grunt `~0.4.5`
